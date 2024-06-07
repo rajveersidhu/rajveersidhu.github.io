@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Hi, I'm [Your Name]</h1>
+        <p>Software Developer</p>
+        <a href="#projects" class="cta">View My Work</a>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>[Brief biography]</p>
+        <h3>Skills & Technologies</h3>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <!-- Add more skills as needed -->
+        </ul>
+        <a href="resume.pdf" class="cta">Download Resume</a>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="project1.png" alt="Project 1">
+            <div class="project-info">
+                <h3>Project 1</h3>
+                <p>[Description of project 1]</p>
+                <a href="https://github.com/username/project1" class="cta">View on GitHub</a>
+            </div>
+        </div>
+        <!-- Repeat for more projects -->
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <form action="mailto:your-email@example.com" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="cta">Send Message</button>
+        </form>
+        <div class="social">
+            <a href="https://github.com/username">GitHub</a>
+            <a href="https://linkedin.com/in/username">LinkedIn</a>
+            <!-- Add more social links as needed -->
+        </div>
+    </section>
+    <script src="scripts.js"></script>
 </body>
 </html>
