@@ -114,3 +114,27 @@ form button:hover {
         transform: translateY(0);
     }
 }
+
+/* Add margins to the about section */
+#about {
+    margin: 0 auto;
+    padding: 2em;
+    max-width: 800px; /* Adjust this value as needed */
+    text-align: left;
+}
+/* Center-align the headings */
+#about h2, #about h3 {
+    text-align: left;
+}
+#contact {
+    margin: 0 auto;
+    padding: 2em;
+    max-width: 800px; /* Adjust this value as needed */
+    text-align: left;
+}
+#projects {
+    margin: 0 auto;
+    padding: 2em;
+    max-width: 800px; /* Adjust this value as needed */
+    text-align: left;
+}
