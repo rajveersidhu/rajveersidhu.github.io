@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contact");
+    const form = document.getElementById("contact-form");
     const formStatus = document.getElementById("form-status");
 
     form.addEventListener("submit", async function(event) {

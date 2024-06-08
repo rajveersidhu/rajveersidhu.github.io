@@ -121,18 +121,29 @@
         </div>
     </section>
     <section id="contact">
-        <h2>Contact</h2>
-        <form action="https://formspree.io/f/xgegjgvv" method="POST" enctype="multipart/form-data">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="cta">Send Message</button>
-        </form>
-        <br>
-        <div class="social">
+        
+        <div class="contact-form">
+            <h2>Contact</h2>
+            <form id="contact-form" action="https://formspree.io/f/xgegjgvv" method="POST">
+                
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                
+                
+                <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+                
+                
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <br>
+
+            <div class="social">
             <a href="https://github.com/rajveersidhu">GitHub</a>
             <a href="https://linkedin.com/in/rajveer-sidhu">LinkedIn</a>
             <!-- Add more social links as needed -->
+            </div>
+            <div id="form-status"></div>
         </div>
     </section>
     <script src="js/scripts.js"></script>
