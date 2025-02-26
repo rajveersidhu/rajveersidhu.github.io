@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website! This is a showcase of my skills, projects, and career aspirations in **Cybersecurity** and **Software Development**.
 
 ## 🌐 Live Demo
-[Visit Portfolio Website](#) *rajveersidhu.github.io*
+[Visit Portfolio Website](rajveersidhu.github.io)
 
 ## 📂 Project Structure
 ```
