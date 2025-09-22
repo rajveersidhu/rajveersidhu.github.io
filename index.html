@@ -1,103 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajveer Sidhu — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-   <section id="home">
-        <h1>Hi, I'm Rajveer Sidhu</h1>
-        <p>IT Support Analyst | System Administration & Technical Support</p>
-        <a href="#projects" class="cta">View My Work</a>
-    </section>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a highly skilled <strong>IT Support Analyst</strong> with extensive experience in <strong>system administration, network infrastructure, and IT operations</strong>. With a proven track record of managing <strong>750+ technical support tickets</strong>, I have successfully optimized IT environments to ensure smooth performance across hardware, software, and network systems.</p>
-        <p>Currently, I am working at the <strong>University of the Fraser Valley</strong>, where I have played a key role in large-scale projects, including the <strong>Windows 11 transition</strong> and the <strong>deployment of over 700 workstations</strong>. My expertise spans <strong>Active Directory, SCCM, cloud management (Azure & AWS), and network security</strong>. Additionally, I have collaborated with vendors and internal teams to drive IT improvements and infrastructure stability.</p>
-        <p>Holding <strong>CCNA Routing & Switching and ITIL v4 Foundation certifications</strong>, I am passionate about leveraging automation and scripting to enhance IT workflows. My goal is to continue advancing in <strong>cybersecurity, cloud computing, and IT automation</strong> to provide innovative solutions that optimize system performance and security.</p>
-    </section>
-       
-    <section id="skills">
-        <h2>Skills & Technologies</h2>
-        <ul>
-            <li><strong>Programming & Scripting:</strong> PowerShell, Python, JavaScript, Bash</li>
-            <li><strong>Operating Systems:</strong> Windows, macOS, Linux</li>
-            <li><strong>Networking:</strong> TCP/IP, DNS, VPNs, Firewalls, Cisco & Meraki switches</li>
-            <li><strong>Cloud Platforms:</strong> Microsoft Azure, AWS</li>
-            <li><strong>Software Deployment:</strong> SCCM, Active Directory, JAMF, Microsoft Intune</li>
-            <li><strong>Database Management:</strong> MySQL, PostgreSQL, SQL</li>
-        </ul>
-        <a href="Resume 2025.pdf" class="cta">View Resume</a>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <img src="images/project1.png" alt="Project 1">
-            <div class="project-info">
-                <h3>AI-Based Emotion Classification Using BERT</h3>
-                <p>This project implements a BERT-based emotion classification model to analyze and classify text into four emotions: Happy, Sad, Angry, and Neutral. The model leverages transformer-based deep learning to detect emotions from textual input.</p>
-                <a href="https://github.com/rajveersidhu/emotion-classification-bert" class="cta">View on GitHub</a>
-            </div>
-        </div>
-        <!-- Repeat for more projects -->
-        <div class="project">
-            <img src="images/project2.png" alt="Project 2">
-            <div class="project-info">
-                <h3>Log Analyzer for Suspicious Activity</h3>
-                <p>🚀 A Python-based tool that detects suspicious login attempts and unauthorized access from system logs.</p>
-                <a href="https://github.com/rajveersidhu/log-analyzer" class="cta">View on GitHub</a>
-            </div>
-        </div>
-        <div class="project">
-            <img src="images/project1.png" alt="Project 3">
-            <div class="project-info">
-                <h3>Project 3</h3>
-                <p>[Description of project 3]</p>
-                <a href="https://github.com/rajveersidhu/" class="cta">View on GitHub</a>
-            </div>
-        </div>
-    </section>
-    <section id="contact">
-        
-        <div class="contact-form">
-            <h2>Contact</h2>
-            <form id="contact-form" action="https://formspree.io/f/xgegjgvv" method="POST">
-                
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                
-                
-                <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
-                
-                
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-            <br>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <div class="social">
-            <a href="https://github.com/rajveersidhu">GitHub</a>
-            <a href="https://linkedin.com/in/rajveer-sidhu">LinkedIn</a>
-            <!-- Add more social links as needed -->
-            </div>
-            <div id="form-status"></div>
-        </div>
-    </section>
-    <script src="js/scripts.js"></script>
+  <!-- HERO / HOME -->
+  <section id="home">
+    <h1>Hi, I'm Rajveer Sidhu</h1>
+    <p>Project Leader (Systems & Projects) • Business Systems Analyst • SQL / Banner / M365</p>
+    <a href="#projects" class="cta">See Recent Work</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      We lead cross‑functional IT projects in higher‑education, focusing on student information systems (Ellucian
+      Banner), document management (BDMS/AppEnhancer), and M365 automation. Currently on contract as a
+      <strong>Project Leader, Systems &amp; Projects</strong> with <strong>Kwantlen Polytechnic University (KPU)</strong>
+      (July 2025 – Present), coordinating kickoff → UAT → IT validation → production deployments and stakeholder
+      sign‑offs across Registrar’s Office initiatives.
+    </p>
+    <p>
+      Previously at the <strong>University of the Fraser Valley (UFV)</strong> we supported campus‑wide endpoint rollouts and
+      operational improvements. Our recent KPU work includes the <strong>BDMS/AppEnhancer upgrade</strong>,
+      <strong>Transfer Credit tracking optimization in Banner</strong>, and release‑management practices (planner schedules,
+      Gantt timelines, and stakeholder‑facing documentation).
+    </p>
+    <p>
+      We enjoy solving data and process problems with SQL, clean requirements, and clear communication.
+    </p>
+    <a href="/mnt/data/ResumeSeptember2025.docx" class="cta">Download Resume</a>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
+    <ul>
+      <li><strong>Business Analysis & Delivery:</strong> Requirements, process mapping, UAT coordination, release notes, sign‑off</li>
+      <li><strong>Higher‑Ed Platforms:</strong> Ellucian Banner (SIS), BDMS / OpenText AppEnhancer, FAST reporting</li>
+      <li><strong>SQL & Data:</strong> Oracle SQL / PL‑SQL, query optimization, data validation & extracts</li>
+      <li><strong>M365 & Automation:</strong> SharePoint, Teams, Planner, Power Automate (flows), documentation hubs</li>
+      <li><strong>Project Tooling:</strong> Gantt timelines, risk/issue logs, tracker dashboards</li>
+      <li><strong>General:</strong> Windows & Linux basics, Git/GitHub, basic Python for utilities</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS / CASE STUDIES -->
+  <section id="projects">
+    <h2>Selected Work</h2>
+
+    <div class="project">
+      <img src="images/bdms.png" alt="BDMS/AppEnhancer Upgrade" />
+      <div class="project-info">
+        <h3>BDMS / AppEnhancer Upgrade (KPU)</h3>
+        <p>
+          Led registrar‑area coordination for the BDMS → AppEnhancer upgrade: kickoff and scope, UAT planning,
+          IT validation, production deployment, and sign‑off tracking. Produced stakeholder‑facing release notes and a
+          planner‑based validation tracker to minimize downtime and ensure clear accountability.
+        </p>
+        <ul>
+          <li>Outcome: successful PROD deployment with planned UAT window and on‑time sign‑offs.</li>
+          <li>Toolkit: SharePoint, Planner, Teams, SQL validation queries.</li>
+        </ul>
+        <a href="#contact" class="cta">Ask for the case study</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/transfer-credit.png" alt="Transfer Credit Tracking" />
+      <div class="project-info">
+        <h3>Transfer Credit Tracking Optimization (Banner)</h3>
+        <p>
+          Designed a Banner‑based approach to track students who request transfer credit after application, including
+          process analysis, options evaluation (e.g., SGASTDN / SOATEST), and reporting via FAST to surface worklists
+          for staff.
+        </p>
+        <ul>
+          <li>Benefits: reduced processing time and increased staff capacity.</li>
+          <li>Scope control notes captured to avoid creep and keep delivery focused.</li>
+        </ul>
+        <a href="https://github.com/rajveersidhu" class="cta" target="_blank" rel="noopener">Design notes & samples</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/sql-reporting.png" alt="SQL Reporting" />
+      <div class="project-info">
+        <h3>Graduation & Credentials SQL Reporting Pack</h3>
+        <p>
+          Authored and refined SQL used to assemble degree/credential outputs (e.g., program, level, credential text,
+          honors), including error fixes (parentheses/INSTR edge cases) and performance hygiene. Focus on correctness
+          and readability for downstream reporting.
+        </p>
+        <a href="https://github.com/rajveersidhu" class="cta" target="_blank" rel="noopener">Code snippets</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/chatbot.png" alt="AI Chatbot for University" />
+      <div class="project-info">
+        <h3>AI Chatbot for University (Student Info Assistant)</h3>
+        <p>
+          A web‑based chatbot that helps students navigate academic calendars, campus locations, and library hours.
+          We are iterating on backend integration to store chats and analytics, with a clean UI, voice I/O, and history.
+        </p>
+        <a href="https://github.com/rajveersidhu" class="cta" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-form">
+      <h2>Contact</h2>
+      <form id="contact-form" action="https://formspree.io/f/xgegjgvv" method="POST">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <br />
+      <div class="social">
+        <a href="https://github.com/rajveersidhu" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/rajveer-sidhu" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div id="form-status"></div>
+    </div>
+  </section>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
