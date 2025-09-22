@@ -1,4 +1,4 @@
-# Hi! I am Rajveer Sidhu.
+# Hi! I am Rajveer.
 Welcome to my personal portfolio website! This is a showcase of my skills, projects, and career aspirations in **Cybersecurity** and **Software Development**.
 
 ## 🌐 Live
