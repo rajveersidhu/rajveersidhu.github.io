@@ -4,12 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajveer Sidhu — Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b1020; --card:#121830; --ink:#eaf0ff; --muted:#9fb0ff; --accent:#7aa2ff; --brand:#5ef0c3; --brand-2:#8a7dff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Roboto,system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:var(--brand)}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px)}
+    nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{display:inline-block;padding:8px 12px;border-radius:12px;color:var(--ink);text-decoration:none;opacity:.9;transition:transform .2s ease, background .3s ease, opacity .2s}
+    nav a:hover{opacity:1;background:rgba(255,255,255,.06);transform:translateY(-1px)}
+
+    /* Hero */
+    #home{position:relative;overflow:hidden}
+    .hero{max-width:1100px;margin:0 auto;padding:110px 20px 70px;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(36px,5vw,56px);line-height:1.1;margin:0 0 10px}
+    .subtitle{font-weight:300;color:var(--muted);margin:0 0 26px}
+    .cta{display:inline-block;padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#07111d;text-decoration:none;font-weight:700;box-shadow:var(--shadow);transform:translateZ(0);transition:filter .2s ease, transform .12s ease}
+    .cta:hover{filter:saturate(120%);transform:translateY(-1px)}
+
+    /* Organic gradient blob */
+    .glow{
+      position:absolute;inset:-20% -10% auto -10%;height:80vh;z-index:-1;
+      background:radial-gradient(60% 60% at 20% 30%, rgba(122,162,255,.25), transparent 60%),
+                 radial-gradient(50% 50% at 80% 20%, rgba(94,240,195,.18), transparent 60%),
+                 radial-gradient(70% 70% at 50% 70%, rgba(255,255,255,.06), transparent 70%);
+      filter:blur(40px);
+      animation:floaty 18s linear infinite alternate;
+    }
+    @keyframes floaty{to{transform:translateY(-30px) translateX(10px)}}
+
+    /* Sections */
+    section{padding:70px 20px}
+    .container{max-width:1100px;margin:0 auto}
+    h2{font-size:clamp(22px,3.2vw,30px);margin:0 0 14px}
+    .muted{color:var(--muted)}
+
+    /* Cards */
+    .grid{display:grid;gap:22px}
+    .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;overflow:hidden}
+
+    /* Project cards with tilt */
+    .project{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center;transform-style:preserve-3d;perspective:800px}
+    .project img{width:110px;height:110px;object-fit:cover;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+    .project .project-info h3{margin:0 0 6px}
+    .project .project-info p{margin:0 0 10px}
+
+    /* Skills badges */
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .badge{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);font-size:13px}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea,button{font:inherit}
+    input,textarea{background:#0e142b;border:1px solid rgba(255,255,255,.12);color:var(--ink);border-radius:12px;padding:12px}
+    textarea{min-height:140px;resize:vertical}
+    button{cursor:pointer}
+
+    /* Reveal animations */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    /* Parallax hint */
+    .parallax{will-change:transform}
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      .glow{animation:none}
+      .cta, .project{transition:none}
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
+      <div style="font-weight:700">RS</div>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -20,131 +96,171 @@
     </nav>
   </header>
 
-  <!-- HERO / HOME -->
   <section id="home">
-    <h1>Hi, I'm Rajveer Sidhu</h1>
-    <p>Project Leader (Systems & Projects) • Business Systems Analyst • SQL / Banner / M365</p>
-    <a href="#projects" class="cta">See Recent Work</a>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="hero container">
+      <div class="parallax" data-parallax="8">
+        <h1 class="reveal">Hi, I'm Rajveer Sidhu</h1>
+        <p class="subtitle reveal" style="max-width:60ch">Project Leader (Systems &amp; Projects) • Business Systems Analyst • SQL / Banner / M365</p>
+        <a href="#projects" class="cta reveal">See Recent Work</a>
+      </div>
+      <div class="reveal">
+        <div class="card">
+          <h3 style="margin-top:0">Job‑ready Snapshot</h3>
+          <p class="muted">Higher‑ed SIS (Banner), BDMS/AppEnhancer upgrades, UAT coordination, release notes, SQL reporting.</p>
+          <div class="badges">
+            <span class="badge">Banner</span>
+            <span class="badge">BDMS/AppEnhancer</span>
+            <span class="badge">Oracle SQL</span>
+            <span class="badge">Power Automate</span>
+            <span class="badge">SharePoint</span>
+            <span class="badge">UAT & Sign‑off</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
-    <h2>About</h2>
-    <p>
-      We lead cross‑functional IT projects in higher‑education, focusing on student information systems (Ellucian
-      Banner), document management (BDMS/AppEnhancer), and M365 automation. Currently on contract as a
-      <strong>Project Leader, Systems &amp; Projects</strong> with <strong>Kwantlen Polytechnic University (KPU)</strong>
-      (July 2025 – Present), coordinating kickoff → UAT → IT validation → production deployments and stakeholder
-      sign‑offs across Registrar’s Office initiatives.
-    </p>
-    <p>
-      Previously at the <strong>University of the Fraser Valley (UFV)</strong> we supported campus‑wide endpoint rollouts and
-      operational improvements. Our recent KPU work includes the <strong>BDMS/AppEnhancer upgrade</strong>,
-      <strong>Transfer Credit tracking optimization in Banner</strong>, and release‑management practices (planner schedules,
-      Gantt timelines, and stakeholder‑facing documentation).
-    </p>
-    <p>
-      We enjoy solving data and process problems with SQL, clean requirements, and clear communication.
-    </p>
-    <a href="/mnt/data/ResumeSeptember2025.docx" class="cta">Download Resume</a>
+    <div class="container">
+      <h2 class="reveal">About</h2>
+      <p class="reveal">We lead cross‑functional IT projects in higher‑education, focusing on student information systems (Ellucian Banner), document management (BDMS/AppEnhancer), and M365 automation. Currently on contract as a <strong>Project Leader, Systems &amp; Projects</strong> with <strong>Kwantlen Polytechnic University (KPU)</strong> (July 2025 – Present), coordinating kickoff → UAT → IT validation → production deployments and stakeholder sign‑offs.</p>
+      <p class="reveal">Recent delivery: <strong>BDMS/AppEnhancer upgrade</strong>, <strong>Transfer Credit tracking optimization</strong> in Banner, and stakeholder‑facing release‑management (planner schedules, Gantt timelines, validation trackers).</p>
+      <p class="reveal"><a class="cta" href="/mnt/data/ResumeSeptember2025.docx">Download Resume</a></p>
+    </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
-    <h2>Skills & Technologies</h2>
-    <ul>
-      <li><strong>Business Analysis & Delivery:</strong> Requirements, process mapping, UAT coordination, release notes, sign‑off</li>
-      <li><strong>Higher‑Ed Platforms:</strong> Ellucian Banner (SIS), BDMS / OpenText AppEnhancer, FAST reporting</li>
-      <li><strong>SQL & Data:</strong> Oracle SQL / PL‑SQL, query optimization, data validation & extracts</li>
-      <li><strong>M365 & Automation:</strong> SharePoint, Teams, Planner, Power Automate (flows), documentation hubs</li>
-      <li><strong>Project Tooling:</strong> Gantt timelines, risk/issue logs, tracker dashboards</li>
-      <li><strong>General:</strong> Windows & Linux basics, Git/GitHub, basic Python for utilities</li>
-    </ul>
+    <div class="container">
+      <h2 class="reveal">Skills &amp; Technologies</h2>
+      <div class="card reveal">
+        <ul style="margin:0 0 10px 18px">
+          <li><strong>Business Analysis &amp; Delivery:</strong> Requirements, process mapping, UAT coordination, release notes, sign‑off</li>
+          <li><strong>Higher‑Ed Platforms:</strong> Ellucian Banner (SIS), BDMS / OpenText AppEnhancer, FAST reporting</li>
+          <li><strong>SQL &amp; Data:</strong> Oracle SQL / PL‑SQL, query optimization, data validation &amp; extracts</li>
+          <li><strong>M365 &amp; Automation:</strong> SharePoint, Teams, Planner, Power Automate (flows)</li>
+          <li><strong>Project Tooling:</strong> Gantt timelines, risk/issue logs, tracker dashboards</li>
+        </ul>
+        <div class="badges">
+          <span class="badge">Ellucian</span>
+          <span class="badge">FAST</span>
+          <span class="badge">PL/SQL</span>
+          <span class="badge">M365</span>
+          <span class="badge">Change Mgmt</span>
+          <span class="badge">Docs</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- PROJECTS / CASE STUDIES -->
   <section id="projects">
-    <h2>Selected Work</h2>
+    <div class="container">
+      <h2 class="reveal">Selected Work</h2>
 
-    <div class="project">
-      <img src="images/bdms.png" alt="BDMS/AppEnhancer Upgrade" />
-      <div class="project-info">
-        <h3>BDMS / AppEnhancer Upgrade (KPU)</h3>
-        <p>
-          Led registrar‑area coordination for the BDMS → AppEnhancer upgrade: kickoff and scope, UAT planning,
-          IT validation, production deployment, and sign‑off tracking. Produced stakeholder‑facing release notes and a
-          planner‑based validation tracker to minimize downtime and ensure clear accountability.
-        </p>
-        <ul>
-          <li>Outcome: successful PROD deployment with planned UAT window and on‑time sign‑offs.</li>
-          <li>Toolkit: SharePoint, Planner, Teams, SQL validation queries.</li>
-        </ul>
-        <a href="#contact" class="cta">Ask for the case study</a>
+      <div class="card project reveal tilt" tabindex="0">
+        <img src="images/bdms.png" alt="BDMS/AppEnhancer Upgrade" />
+        <div class="project-info">
+          <h3>BDMS / AppEnhancer Upgrade (KPU)</h3>
+          <p>Led registrar‑area coordination from scope to PROD, including UAT planning, IT validation, and sign‑off tracking. Produced release notes and planner‑based validation tracker to minimize downtime.</p>
+          <div class="badges"><span class="badge">AppEnhancer</span><span class="badge">UAT</span><span class="badge">Release Notes</span></div>
+        </div>
       </div>
-    </div>
 
-    <div class="project">
-      <img src="images/transfer-credit.png" alt="Transfer Credit Tracking" />
-      <div class="project-info">
-        <h3>Transfer Credit Tracking Optimization (Banner)</h3>
-        <p>
-          Designed a Banner‑based approach to track students who request transfer credit after application, including
-          process analysis, options evaluation (e.g., SGASTDN / SOATEST), and reporting via FAST to surface worklists
-          for staff.
-        </p>
-        <ul>
-          <li>Benefits: reduced processing time and increased staff capacity.</li>
-          <li>Scope control notes captured to avoid creep and keep delivery focused.</li>
-        </ul>
-        <a href="https://github.com/rajveersidhu" class="cta" target="_blank" rel="noopener">Design notes & samples</a>
+      <div class="card project reveal tilt" tabindex="0">
+        <img src="images/transfer-credit.png" alt="Transfer Credit Tracking" />
+        <div class="project-info">
+          <h3>Transfer Credit Tracking Optimization (Banner)</h3>
+          <p>Designed a Banner‑based method to track post‑application TCR requests; evaluated SGASTDN/SOATEST options and published FAST reports to surface worklists.</p>
+          <div class="badges"><span class="badge">Banner</span><span class="badge">FAST</span><span class="badge">Process</span></div>
+        </div>
       </div>
-    </div>
 
-    <div class="project">
-      <img src="images/sql-reporting.png" alt="SQL Reporting" />
-      <div class="project-info">
-        <h3>Graduation & Credentials SQL Reporting Pack</h3>
-        <p>
-          Authored and refined SQL used to assemble degree/credential outputs (e.g., program, level, credential text,
-          honors), including error fixes (parentheses/INSTR edge cases) and performance hygiene. Focus on correctness
-          and readability for downstream reporting.
-        </p>
-        <a href="https://github.com/rajveersidhu" class="cta" target="_blank" rel="noopener">Code snippets</a>
+      <div class="card project reveal tilt" tabindex="0">
+        <img src="images/sql-reporting.png" alt="SQL Reporting" />
+        <div class="project-info">
+          <h3>Graduation &amp; Credentials SQL Reporting Pack</h3>
+          <p>Authored SQL for credential text, honors, and program outputs; fixed INSTR/parenthesis errors; emphasized correctness and maintainability.</p>
+          <div class="badges"><span class="badge">Oracle SQL</span><span class="badge">Reporting</span></div>
+        </div>
       </div>
-    </div>
 
-    <div class="project">
-      <img src="images/chatbot.png" alt="AI Chatbot for University" />
-      <div class="project-info">
-        <h3>AI Chatbot for University (Student Info Assistant)</h3>
-        <p>
-          A web‑based chatbot that helps students navigate academic calendars, campus locations, and library hours.
-          We are iterating on backend integration to store chats and analytics, with a clean UI, voice I/O, and history.
-        </p>
-        <a href="https://github.com/rajveersidhu" class="cta" target="_blank" rel="noopener">View on GitHub</a>
+      <div class="card project reveal tilt" tabindex="0">
+        <img src="images/chatbot.png" alt="AI Chatbot for University" />
+        <div class="project-info">
+          <h3>AI Chatbot for University (Student Info Assistant)</h3>
+          <p>Web chatbot for students (calendar, locations, hours). Iterating backend for persistence/analytics; clean UI with voice I/O.</p>
+          <div class="badges"><span class="badge">Web</span><span class="badge">AI</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
-    <div class="contact-form">
-      <h2>Contact</h2>
-      <form id="contact-form" action="https://formspree.io/f/xgegjgvv" method="POST">
-        <input type="text" id="name" name="name" placeholder="Your Name" required />
-        <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <br />
-      <div class="social">
-        <a href="https://github.com/rajveersidhu" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/rajveer-sidhu" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="container">
+      <h2 class="reveal">Contact</h2>
+      <div class="grid cols-2">
+        <div class="card reveal">
+          <form id="contact-form" action="https://formspree.io/f/xgegjgvv" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button class="cta" type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="reveal">
+          <div class="card">
+            <h3 style="margin-top:0">Connect</h3>
+            <p class="muted">Prefer LinkedIn for quick responses.</p>
+            <p>
+              <a href="https://github.com/rajveersidhu" target="_blank" rel="noopener">GitHub</a> ·
+              <a href="https://linkedin.com/in/rajveer-sidhu" target="_blank" rel="noopener">LinkedIn</a>
+            </p>
+          </div>
+        </div>
       </div>
-      <div id="form-status"></div>
+      <div id="form-status" class="muted" style="margin-top:10px"></div>
     </div>
   </section>
 
-  <script src="js/scripts.js"></script>
+  <script>
+    // IntersectionObserver reveal-on-scroll
+    const io = new IntersectionObserver((entries)=>{
+      for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } }
+    },{threshold:0.12, rootMargin:'0px 0px -10% 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Subtle parallax for hero text
+    const parallax = document.querySelectorAll('[data-parallax]');
+    window.addEventListener('scroll',()=>{
+      const y = window.scrollY;
+      parallax.forEach(el=>{
+        const strength = Number(el.dataset.parallax)||8;
+        el.style.transform = `translateY(${Math.min(y/strength, 40)}px)`;
+      });
+    }, {passive:true});
+
+    // Tilt effect for project cards (accessible: keyboard focus adds same effect)
+    const maxTilt = 8; // degrees
+    function applyTilt(card, x, y){
+      const r = card.getBoundingClientRect();
+      const px = (x - r.left)/r.width; const py = (y - r.top)/r.height;
+      const rx = (py - .5) * maxTilt; const ry = (px - .5) * -maxTilt;
+      card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+    }
+    function resetTilt(card){ card.style.transform = 'rotateX(0) rotateY(0)'; }
+    document.querySelectorAll('.tilt').forEach(card=>{
+      card.addEventListener('mousemove',e=>applyTilt(card,e.clientX,e.clientY));
+      card.addEventListener('mouseleave',()=>resetTilt(card));
+      card.addEventListener('focus',()=>card.style.transform = 'translateY(-2px)');
+      card.addEventListener('blur',()=>resetTilt(card));
+    });
+
+    // Form status feedback
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    if(form){
+      form.addEventListener('submit',()=>{ status.textContent = 'Sending…'; });
+    }
+  </script>
 </body>
 </html>
