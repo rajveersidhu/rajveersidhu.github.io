@@ -2,90 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rajveer Sidhu — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b1020; --card:#121830; --ink:#eaf0ff; --muted:#9fb0ff; --accent:#7aa2ff; --brand:#5ef0c3; --brand-2:#8a7dff;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
+      --bg:#0a0f1a; --panel:#0f1628; --ink:#e9eeff; --muted:#9db0ff; --line:rgba(255,255,255,.08);
+      --brand:#66f0c9; --brand2:#7a8cff; --cta-ink:#07111d; --shadow:0 12px 30px rgba(0,0,0,.35);
+      --radius:20px; --radius-sm:14px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Roboto,system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-    a{color:var(--brand)}
-    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px)}
-    nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{display:inline-block;padding:8px 12px;border-radius:12px;color:var(--ink);text-decoration:none;opacity:.9;transition:transform .2s ease, background .3s ease, opacity .2s}
-    nav a:hover{opacity:1;background:rgba(255,255,255,.06);transform:translateY(-1px)}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Top Nav */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(10px)}
+    nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:var(--shadow)}
+    .brand span{font-weight:700}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    nav a{color:var(--ink);opacity:.9;padding:8px 12px;border-radius:10px}
+    nav a:hover{opacity:1;background:rgba(255,255,255,.06)}
+
+    /* Sections */
+    section{padding:84px 20px}
+    .container{max-width:1200px;margin:0 auto}
+    h2{font-size:clamp(24px,3vw,34px);margin:0 0 16px}
+    .lead{color:var(--muted)}
 
     /* Hero */
     #home{position:relative;overflow:hidden}
-    .hero{max-width:1100px;margin:0 auto;padding:110px 20px 70px;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
-    .hero h1{font-size:clamp(36px,5vw,56px);line-height:1.1;margin:0 0 10px}
-    .subtitle{font-weight:300;color:var(--muted);margin:0 0 26px}
-    .cta{display:inline-block;padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#07111d;text-decoration:none;font-weight:700;box-shadow:var(--shadow);transform:translateZ(0);transition:filter .2s ease, transform .12s ease}
-    .cta:hover{filter:saturate(120%);transform:translateY(-1px)}
-
-    /* Organic gradient blob */
-    .glow{
-      position:absolute;inset:-20% -10% auto -10%;height:80vh;z-index:-1;
-      background:radial-gradient(60% 60% at 20% 30%, rgba(122,162,255,.25), transparent 60%),
-                 radial-gradient(50% 50% at 80% 20%, rgba(94,240,195,.18), transparent 60%),
-                 radial-gradient(70% 70% at 50% 70%, rgba(255,255,255,.06), transparent 70%);
-      filter:blur(40px);
-      animation:floaty 18s linear infinite alternate;
+    .glow{position:absolute;inset:-25% -10% auto -10%;height:90vh;z-index:-1;filter:blur(40px);
+      background:
+        radial-gradient(60% 60% at 20% 30%, rgba(122,140,255,.25), transparent 60%),
+        radial-gradient(55% 55% at 80% 20%, rgba(102,240,201,.22), transparent 60%),
+        radial-gradient(70% 70% at 50% 80%, rgba(255,255,255,.05), transparent 70%);
+      animation:floaty 22s ease-in-out infinite alternate;
     }
-    @keyframes floaty{to{transform:translateY(-30px) translateX(10px)}}
+    @keyframes floaty{to{transform:translateY(-40px) translateX(16px)}}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+    .title{font-size:clamp(34px,6vw,60px);line-height:1.1;margin:0 0 8px}
+    .subtitle{color:var(--muted);margin:0 0 28px}
+    .cta{display:inline-block;padding:12px 18px;border-radius:16px;font-weight:700;color:var(--cta-ink);
+      background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:var(--shadow);transition:transform .12s ease, filter .2s ease}
+    .cta:hover{transform:translateY(-1px);filter:saturate(115%)}
+    .statbar{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .chip{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+      padding:8px 12px;border-radius:999px;font-size:13px}
 
-    /* Sections */
-    section{padding:70px 20px}
-    .container{max-width:1100px;margin:0 auto}
-    h2{font-size:clamp(22px,3.2vw,30px);margin:0 0 14px}
-    .muted{color:var(--muted)}
+    /* Panels */
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--line);
+      border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
 
-    /* Cards */
-    .grid{display:grid;gap:22px}
-    .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;overflow:hidden}
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+    .card{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:var(--shadow);transform-style:preserve-3d}
+    .card-media{height:180px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(122,140,255,.25),rgba(102,240,201,.18));border-bottom:1px solid var(--line)}
+    .card-media img{width:120px;height:120px;object-fit:cover;border-radius:16px}
+    .card-body{padding:18px}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0 0 14px;color:#d9e2ff}
+    .badgebar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .badge{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);font-size:12px}
 
-    /* Project cards with tilt */
-    .project{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center;transform-style:preserve-3d;perspective:800px}
-    .project img{width:110px;height:110px;object-fit:cover;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
-    .project .project-info h3{margin:0 0 6px}
-    .project .project-info p{margin:0 0 10px}
-
-    /* Skills badges */
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .badge{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);font-size:13px}
+    /* Skills */
+    .skills-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 
     /* Contact */
     form{display:grid;gap:12px}
     input,textarea,button{font:inherit}
-    input,textarea{background:#0e142b;border:1px solid rgba(255,255,255,.12);color:var(--ink);border-radius:12px;padding:12px}
+    input,textarea{background:#0d1428;border:1px solid var(--line);color:var(--ink);border-radius:var(--radius-sm);padding:12px}
     textarea{min-height:140px;resize:vertical}
-    button{cursor:pointer}
 
-    /* Reveal animations */
+    /* Animations */
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease}
-    .reveal.show{opacity:1;transform:none}
+    .show{opacity:1;transform:none}
+    .tilt{transition:transform .15s ease}
 
-    /* Parallax hint */
-    .parallax{will-change:transform}
+    /* Footer */
+    footer{padding:50px 20px;border-top:1px solid var(--line);color:var(--muted)}
 
-    /* Reduce motion */
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+
+    /* Motion preferences */
     @media (prefers-reduced-motion: reduce){
       .glow{animation:none}
-      .cta, .project{transition:none}
+      .cta,.tilt{transition:none}
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div style="font-weight:700">RS</div>
+      <div class="brand"><div class="brand-mark" aria-hidden="true"></div><span>Rajveer Sidhu</span></div>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -96,170 +114,171 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section id="home">
     <div class="glow" aria-hidden="true"></div>
-    <div class="hero container">
-      <div class="parallax" data-parallax="8">
-        <h1 class="reveal">Hi, I'm Rajveer Sidhu</h1>
-        <p class="subtitle reveal" style="max-width:60ch">Project Leader (Systems &amp; Projects) • Business Systems Analyst • SQL / Banner / M365</p>
-        <a href="#projects" class="cta reveal">See Recent Work</a>
-      </div>
-      <div class="reveal">
-        <div class="card">
-          <h3 style="margin-top:0">Job‑ready Snapshot</h3>
-          <p class="muted">Higher‑ed SIS (Banner), BDMS/AppEnhancer upgrades, UAT coordination, release notes, SQL reporting.</p>
-          <div class="badges">
-            <span class="badge">Banner</span>
-            <span class="badge">BDMS/AppEnhancer</span>
-            <span class="badge">Oracle SQL</span>
-            <span class="badge">Power Automate</span>
-            <span class="badge">SharePoint</span>
-            <span class="badge">UAT & Sign‑off</span>
-          </div>
+    <div class="container hero">
+      <div>
+        <h1 class="title reveal">Hi, I'm Rajveer</h1>
+        <p class="subtitle reveal">We lead higher‑ed IT projects: Banner SIS, BDMS/AppEnhancer, and M365 automation. Project Leader • Business Systems Analyst • SQL.</p>
+        <a class="cta reveal" href="#projects">See Projects</a>
+        <div class="statbar reveal">
+          <span class="chip">Banner & BDMS</span>
+          <span class="chip">Oracle SQL / PL‑SQL</span>
+          <span class="chip">Power Automate</span>
+          <span class="chip">UAT & Sign‑off</span>
         </div>
+      </div>
+      <div class="panel reveal">
+        <h3 style="margin-top:0">What we do</h3>
+        <p class="lead">Translate business needs into shipped changes. We map processes, write clear requirements, coordinate UAT, and push clean deployments with release notes and validation trackers.</p>
+        <p><a class="cta" href="/mnt/data/ResumeSeptember2025.docx">Download Resume</a></p>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <h2 class="reveal">About</h2>
-      <p class="reveal">We lead cross‑functional IT projects in higher‑education, focusing on student information systems (Ellucian Banner), document management (BDMS/AppEnhancer), and M365 automation. Currently on contract as a <strong>Project Leader, Systems &amp; Projects</strong> with <strong>Kwantlen Polytechnic University (KPU)</strong> (July 2025 – Present), coordinating kickoff → UAT → IT validation → production deployments and stakeholder sign‑offs.</p>
-      <p class="reveal">Recent delivery: <strong>BDMS/AppEnhancer upgrade</strong>, <strong>Transfer Credit tracking optimization</strong> in Banner, and stakeholder‑facing release‑management (planner schedules, Gantt timelines, validation trackers).</p>
-      <p class="reveal"><a class="cta" href="/mnt/data/ResumeSeptember2025.docx">Download Resume</a></p>
+      <p class="reveal">Currently contracting as a <strong>Project Leader, Systems &amp; Projects</strong> at KPU (July 2025–Present). Recent delivery includes a registrar‑area <strong>BDMS → AppEnhancer upgrade</strong> and <strong>Transfer Credit tracking optimization</strong> in Banner, with planner‑based validation and sign‑off workflows.</p>
+      <p class="reveal">Previously at UFV we supported large endpoint rollouts and operational improvements. Our sweet spot is marrying SQL‑level accuracy with plain‑English communication so decisions move faster.</p>
     </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <h2 class="reveal">Skills &amp; Technologies</h2>
-      <div class="card reveal">
-        <ul style="margin:0 0 10px 18px">
-          <li><strong>Business Analysis &amp; Delivery:</strong> Requirements, process mapping, UAT coordination, release notes, sign‑off</li>
-          <li><strong>Higher‑Ed Platforms:</strong> Ellucian Banner (SIS), BDMS / OpenText AppEnhancer, FAST reporting</li>
-          <li><strong>SQL &amp; Data:</strong> Oracle SQL / PL‑SQL, query optimization, data validation &amp; extracts</li>
-          <li><strong>M365 &amp; Automation:</strong> SharePoint, Teams, Planner, Power Automate (flows)</li>
-          <li><strong>Project Tooling:</strong> Gantt timelines, risk/issue logs, tracker dashboards</li>
-        </ul>
-        <div class="badges">
-          <span class="badge">Ellucian</span>
-          <span class="badge">FAST</span>
-          <span class="badge">PL/SQL</span>
-          <span class="badge">M365</span>
-          <span class="badge">Change Mgmt</span>
-          <span class="badge">Docs</span>
+      <h2 class="reveal">Skills</h2>
+      <div class="skills-wrap">
+        <div class="panel reveal">
+          <h3>Business Analysis & Delivery</h3>
+          <p class="lead">Requirements, process mapping, UAT coordination, release notes, sign‑off ceremonies.</p>
+        </div>
+        <div class="panel reveal">
+          <h3>Platforms</h3>
+          <p class="lead">Ellucian Banner (SIS), BDMS / OpenText AppEnhancer, FAST Reporting, M365 (SharePoint/Teams/Planner).</p>
+        </div>
+        <div class="panel reveal">
+          <h3>Data</h3>
+          <p class="lead">Oracle SQL & PL‑SQL, validation queries, clean extracts, performance hygiene.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PROJECTS (ONLY THE THREE SPECIFIED) -->
   <section id="projects">
     <div class="container">
-      <h2 class="reveal">Selected Work</h2>
-
-      <div class="card project reveal tilt" tabindex="0">
-        <img src="images/bdms.png" alt="BDMS/AppEnhancer Upgrade" />
-        <div class="project-info">
-          <h3>BDMS / AppEnhancer Upgrade (KPU)</h3>
-          <p>Led registrar‑area coordination from scope to PROD, including UAT planning, IT validation, and sign‑off tracking. Produced release notes and planner‑based validation tracker to minimize downtime.</p>
-          <div class="badges"><span class="badge">AppEnhancer</span><span class="badge">UAT</span><span class="badge">Release Notes</span></div>
-        </div>
-      </div>
-
-      <div class="card project reveal tilt" tabindex="0">
-        <img src="images/transfer-credit.png" alt="Transfer Credit Tracking" />
-        <div class="project-info">
-          <h3>Transfer Credit Tracking Optimization (Banner)</h3>
-          <p>Designed a Banner‑based method to track post‑application TCR requests; evaluated SGASTDN/SOATEST options and published FAST reports to surface worklists.</p>
-          <div class="badges"><span class="badge">Banner</span><span class="badge">FAST</span><span class="badge">Process</span></div>
-        </div>
-      </div>
-
-      <div class="card project reveal tilt" tabindex="0">
-        <img src="images/sql-reporting.png" alt="SQL Reporting" />
-        <div class="project-info">
-          <h3>Graduation &amp; Credentials SQL Reporting Pack</h3>
-          <p>Authored SQL for credential text, honors, and program outputs; fixed INSTR/parenthesis errors; emphasized correctness and maintainability.</p>
-          <div class="badges"><span class="badge">Oracle SQL</span><span class="badge">Reporting</span></div>
-        </div>
-      </div>
-
-      <div class="card project reveal tilt" tabindex="0">
-        <img src="images/chatbot.png" alt="AI Chatbot for University" />
-        <div class="project-info">
-          <h3>AI Chatbot for University (Student Info Assistant)</h3>
-          <p>Web chatbot for students (calendar, locations, hours). Iterating backend for persistence/analytics; clean UI with voice I/O.</p>
-          <div class="badges"><span class="badge">Web</span><span class="badge">AI</span></div>
-        </div>
+      <h2 class="reveal">Projects</h2>
+      <div class="projects">
+        <!-- Project 1 -->
+        <article class="card tilt reveal" tabindex="0">
+          <div class="card-media">
+            <img src="images/project1.png" alt="AI-Based Emotion Classification Using BERT" />
+          </div>
+          <div class="card-body">
+            <h3>AI-Based Emotion Classification Using BERT</h3>
+            <p>This project implements a BERT-based emotion classification model to analyze and classify text into four emotions: Happy, Sad, Angry, and Neutral. The model leverages transformer-based deep learning to detect emotions from textual input.</p>
+            <div class="badgebar">
+              <span class="badge">Python</span><span class="badge">BERT</span><span class="badge">NLP</span>
+            </div>
+            <p style="margin-top:12px"><a class="cta" href="https://github.com/rajveersidhu/emotion-classification-bert" target="_blank" rel="noopener">View on GitHub</a></p>
+          </div>
+        </article>
+        <!-- Project 2 -->
+        <article class="card tilt reveal" tabindex="0">
+          <div class="card-media">
+            <img src="images/project2.png" alt="Log Analyzer for Suspicious Activity" />
+          </div>
+          <div class="card-body">
+            <h3>Log Analyzer for Suspicious Activity</h3>
+            <p>🚀 A Python-based tool that detects suspicious login attempts and unauthorized access from system logs.</p>
+            <div class="badgebar">
+              <span class="badge">Python</span><span class="badge">Security</span><span class="badge">Logs</span>
+            </div>
+            <p style="margin-top:12px"><a class="cta" href="https://github.com/rajveersidhu/log-analyzer" target="_blank" rel="noopener">View on GitHub</a></p>
+          </div>
+        </article>
+        <!-- Project 3 -->
+        <article class="card tilt reveal" tabindex="0">
+          <div class="card-media">
+            <img src="images/project1.png" alt="Project 3" />
+          </div>
+          <div class="card-body">
+            <h3>Project 3</h3>
+            <p>[Description of project 3]</p>
+            <p style="margin-top:12px"><a class="cta" href="https://github.com/rajveersidhu/" target="_blank" rel="noopener">View on GitHub</a></p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <h2 class="reveal">Contact</h2>
-      <div class="grid cols-2">
-        <div class="card reveal">
+      <div class="skills-wrap">
+        <div class="panel reveal">
           <form id="contact-form" action="https://formspree.io/f/xgegjgvv" method="POST">
             <input type="text" id="name" name="name" placeholder="Your Name" required />
             <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
             <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             <button class="cta" type="submit">Send Message</button>
           </form>
+          <div id="form-status" class="lead" style="margin-top:8px"></div>
         </div>
-        <div class="reveal">
-          <div class="card">
-            <h3 style="margin-top:0">Connect</h3>
-            <p class="muted">Prefer LinkedIn for quick responses.</p>
-            <p>
-              <a href="https://github.com/rajveersidhu" target="_blank" rel="noopener">GitHub</a> ·
-              <a href="https://linkedin.com/in/rajveer-sidhu" target="_blank" rel="noopener">LinkedIn</a>
-            </p>
-          </div>
+        <div class="panel reveal">
+          <h3>Elsewhere</h3>
+          <p><a href="https://github.com/rajveersidhu" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/rajveer-sidhu" target="_blank" rel="noopener">LinkedIn</a></p>
+          <p class="lead">Prefer LinkedIn for quick responses.</p>
         </div>
       </div>
-      <div id="form-status" class="muted" style="margin-top:10px"></div>
     </div>
   </section>
 
+  <footer>
+    <div class="container">© <span id="y"></span> Rajveer Sidhu — Built with vanilla HTML/CSS/JS and a splash of animation.</div>
+  </footer>
+
   <script>
-    // IntersectionObserver reveal-on-scroll
+    // Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
-      for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } }
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
     },{threshold:0.12, rootMargin:'0px 0px -10% 0px'});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Subtle parallax for hero text
-    const parallax = document.querySelectorAll('[data-parallax]');
-    window.addEventListener('scroll',()=>{
-      const y = window.scrollY;
-      parallax.forEach(el=>{
-        const strength = Number(el.dataset.parallax)||8;
-        el.style.transform = `translateY(${Math.min(y/strength, 40)}px)`;
-      });
-    }, {passive:true});
-
-    // Tilt effect for project cards (accessible: keyboard focus adds same effect)
-    const maxTilt = 8; // degrees
-    function applyTilt(card, x, y){
+    // Tilt cards
+    const maxTilt = 8; // deg
+    function tilt(card, x, y){
       const r = card.getBoundingClientRect();
-      const px = (x - r.left)/r.width; const py = (y - r.top)/r.height;
-      const rx = (py - .5) * maxTilt; const ry = (px - .5) * -maxTilt;
-      card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+      const px=(x-r.left)/r.width, py=(y-r.top)/r.height;
+      const rx=(py-.5)*maxTilt, ry=(px-.5)*-maxTilt;
+      card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
     }
-    function resetTilt(card){ card.style.transform = 'rotateX(0) rotateY(0)'; }
-    document.querySelectorAll('.tilt').forEach(card=>{
-      card.addEventListener('mousemove',e=>applyTilt(card,e.clientX,e.clientY));
-      card.addEventListener('mouseleave',()=>resetTilt(card));
-      card.addEventListener('focus',()=>card.style.transform = 'translateY(-2px)');
-      card.addEventListener('blur',()=>resetTilt(card));
+    function reset(c){ c.style.transform='rotateX(0) rotateY(0)'; }
+    document.querySelectorAll('.tilt').forEach(c=>{
+      c.addEventListener('mousemove',e=>tilt(c,e.clientX,e.clientY));
+      c.addEventListener('mouseleave',()=>reset(c));
+      c.addEventListener('focus',()=>c.style.transform='translateY(-2px)');
+      c.addEventListener('blur',()=>reset(c));
     });
 
-    // Form status feedback
+    // Parallax hero chips for micro depth
+    const chips = document.querySelectorAll('.chip');
+    window.addEventListener('scroll',()=>{
+      const sy = window.scrollY; let i=0; chips.forEach(ch=>{ ch.style.transform=`translateY(${(i++%2?1:-1)*(sy*.02)}px)`; });
+    }, {passive:true});
+
+    // Form feedback
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
     if(form){
-      form.addEventListener('submit',()=>{ status.textContent = 'Sending…'; });
+      form.addEventListener('submit',()=>{ if(status) status.textContent='Sending…'; });
     }
   </script>
 </body>
