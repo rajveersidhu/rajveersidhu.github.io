@@ -1,5 +1,5 @@
 # Hi! I am Rajveer.
-Welcome to my personal portfolio website! This is a showcase of my skills, projects, and career aspirations in **Cybersecurity** and **Software Development**.
+Welcome to my personal portfolio website! This is a showcase of my skills, projects, and career.
 
 ## 🌐 Live
 [https://rajveersidhu.github.io](https://rajveersidhu.github.io/)
@@ -14,11 +14,11 @@ Welcome to my personal portfolio website! This is a showcase of my skills, proje
 ```
 
 ## ✨ Features
-- **Clean & Responsive Design** 📱💻
-- **Showcase of Projects** 🚀
-- **Contact Form with Formspree Integration** 📩
-- **GitHub Project Links** 🔗
-- **Custom Styling & Smooth Navigation** 🎨
+- **Clean & Responsive Design** 
+- **Showcase of Projects** 
+- **Contact Form with Formspree Integration** 
+- **GitHub Project Links** 
+- **Custom Styling & Smooth Navigation** 
 
 ## 🛠️ Technologies Used
 - **HTML5**
@@ -31,4 +31,4 @@ Welcome to my personal portfolio website! This is a showcase of my skills, proje
 - **LinkedIn:** [Rajveer Sidhu](https://linkedin.com/in/rajveer-sidhu)
 - **Email:** *rajveer.singh.sidhu@hotmail.com*
 
-🚀 Built with passion for **Cybersecurity & Software Development**.
+Built with passion.
